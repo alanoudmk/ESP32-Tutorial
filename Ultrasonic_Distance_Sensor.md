@@ -65,5 +65,51 @@ Connect the ESP32 board to the HC-SR04 ultrasonic sensor using the following pin
 
 ## Code
 ```
+int Trig_pin = 5;
+int Echo_pin = 18;
+long duration;
+float speed_of_sound = 0.34;
+float dist_in_cm;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(Trig_pin, OUTPUT);
+  pinMode(Echo_pin, INPUT);
+}
+
+void loop() {
+  digitalWrite(Trig_pin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(Trig_pin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(Trig_pin, LOW);
+
+  duration = pulseIn(Echo_pin, HIGH);
+
+  dist_in_cm = duration * speed_of_sound / 2;
+  Serial.print("the distance is:");
+  Serial.println(dist_in_cm);
+  delay(1000);
+}
 ```
+
+
+## Distance Sensor to 400cm
+
+- Ultrasonic distance sensor measuring a distance of 400 centimeters (4 meters), indicating the sensor's maximum detection range.
+- The distance value displayed on the screen is "400 cm", which is the maximum distance the sensor can reliably measure.
+- This type of ultrasonic sensor is capable of detecting objects at distances up to 4 meters away, making it suitable for applications that require long-range distance measurement, such as in robotics, autonomous vehicles, or large-scale industrial monitoring.
+
+ <img src="https://github.com/user-attachments/assets/dd65f9d7-da3b-4844-959d-b0474cc7e556" width="350" height="320">
+
+
+
+## Distance Sensor to 202cm
+
+- Ultrasonic distance sensor measuring a distance of 202 centimeters (2.02 meters).
+- The distance scale in the image ranges from 0 to 202 centimeters, indicating the sensor's maximum detection range, which is the maximum distance the sensor can reliably measure.
+- This type of ultrasonic sensor has a shorter detection range compared to the previous one, with a maximum distance of 2.02 meters.
+Sensors with a shorter detection range are often used in applications where the target objects are closer, such as in indoor environments, robotic navigation, or proximity detection tasks.
+
+ <img src="https://github.com/user-attachments/assets/af0bf3cb-6284-4c2d-8c1c-cdc0abef8480" width="350" height="320">
 
