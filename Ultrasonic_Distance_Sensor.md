@@ -35,7 +35,7 @@ This simple project demonstrates how to use an ultrasonic distance sensor to mea
 
 
 # Simulation on WOKWi
-Before getting started with ESP32 in real life. we should try to simulate everything on any online simulator. I chose WOKWI because it contains ESP32 unlike TinkerCAD which lacks of this component.
+Before getting started with ESP32 in real life. we should try to simulate everything on any online simulator. I chose [WOKWI](https://wokwi.com/) because it contains ESP32 unlike TinkerCAD which lacks of this component.
 
 
    <img src="https://github.com/user-attachments/assets/989a7ae3-ef51-48ec-ad09-7a408b2bd615" width="350" height="320">
